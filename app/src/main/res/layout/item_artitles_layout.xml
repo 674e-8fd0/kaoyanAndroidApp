@@ -3,16 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/top_grey"
+
+
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+
+        android:layout_marginTop="15dp"
+        >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="21dp"
-        android:paddingTop="13dp"
         android:paddingRight="21dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="标题党"
+            android:textColor="#242424"
+            android:textSize="19sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,29 +38,19 @@
 
             <ImageView
                 android:id="@+id/img_header"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@mipmap/heng" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="11dp">
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:text="标题党"
-                    android:textColor="#242424"
-                    android:textSize="14sp" />
-
                 <TextView
                     android:id="@+id/author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
                     android:text="作者姓名"
                     android:textColor="#9f9f9f"
                     android:textSize="12sp" />
@@ -56,7 +63,7 @@
     android:id="@+id/text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="dffsdfs"
+    android:text="文章内容"
     android:textColor="@color/black"
 />
 
@@ -141,4 +148,6 @@
         android:layout_width="match_parent"
         android:layout_height="7dp"
         android:background="#f5f5f4" />
+
+    </LinearLayout>
 </LinearLayout>

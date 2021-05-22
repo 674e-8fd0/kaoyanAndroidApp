@@ -26,7 +26,9 @@
         <activity
             android:name=".activity.ListViewMultiChartActivity"
             android:configChanges="orientation|screenSize" />
-
+        <activity
+            android:name=".activity.DispayArt"
+            android:configChanges="orientation|screenSize" />
 
     </application>
 

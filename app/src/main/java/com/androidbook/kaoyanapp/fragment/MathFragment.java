@@ -24,6 +24,8 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.OnClick;
+
 public class MathFragment extends Fragment {
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
@@ -41,6 +43,10 @@ public class MathFragment extends Fragment {
         recyclerView=v.findViewById(R.id.itemRecycle);
         return v;
     }
+
+
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

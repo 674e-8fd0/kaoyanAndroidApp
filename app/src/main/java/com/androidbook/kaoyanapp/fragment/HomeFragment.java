@@ -77,7 +77,6 @@ public class HomeFragment extends BaseFragment {
         mFragments.add(EnglishFragment.newInstance(mTitles[1]));
         mFragments.add(PoliticsFragment.newInstance(mTitles[2]));
         mFragments.add(MajorFragment.newInstance(mTitles[3]));
-
         viewPager.setOffscreenPageLimit(mFragments.size());
         viewPager.setAdapter(new HomeAdapter(getFragmentManager(),mTitles,mFragments));
         slidingTabLayout.setViewPager(viewPager);
