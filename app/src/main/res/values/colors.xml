@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="divider">#e8e7e7</color>
+    <color name="skin_text_white">#ffffff</color>
+    <color name="skin_topbar_bg_color">#344261</color>
+    <color name="top_grey">#F6F6F6</color>
+    <color name="main_color">#EE4100</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="gray0">#464646</color>
+    <color name="gray1">#DCDCDC</color>
+    <color name="gray2">#969696</color>
+    <color name="btn_navigator_selected">	#FFD700</color>
+    <color name="btn_navigator_nselected">	#DCDCDC</color>
+
+</resources>

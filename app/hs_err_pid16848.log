@@ -1,0 +1,201 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=16848, tid=0x000000000000174c
+#
+# JRE version: OpenJDK Runtime Environment (8.0_242-b01) (build 1.8.0_242-release-1644-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000013eae000):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=5964, stack(0x0000000016d70000,0x0000000016e70000)]
+
+Stack: [0x0000000016d70000,0x0000000016e70000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:    277   59       4       java.lang.CharacterData::of (120 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000156fe000 JavaThread "SeedGenerator Thread" daemon [_thread_blocked, id=18492, stack(0x0000000017270000,0x0000000017370000)]
+  0x00000000156fb000 JavaThread "SeedGenerator Thread" daemon [_thread_in_Java, id=9872, stack(0x0000000017170000,0x0000000017270000)]
+  0x0000000013eae800 JavaThread "Service Thread" daemon [_thread_blocked, id=15624, stack(0x0000000016f70000,0x0000000017070000)]
+  0x0000000015623000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=12944, stack(0x0000000016e70000,0x0000000016f70000)]
+=>0x0000000013eae000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=5964, stack(0x0000000016d70000,0x0000000016e70000)]
+  0x0000000013eaa800 JavaThread "C2 CompilerThread1" daemon [_thread_in_vm, id=5952, stack(0x0000000016c70000,0x0000000016d70000)]
+  0x00000000155c7000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=13028, stack(0x0000000016b70000,0x0000000016c70000)]
+  0x0000000015621800 JavaThread "Attach Listener" daemon [_thread_blocked, id=12904, stack(0x0000000016a70000,0x0000000016b70000)]
+  0x00000000155b0000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12424, stack(0x0000000016970000,0x0000000016a70000)]
+  0x0000000013e9d000 JavaThread "Finalizer" daemon [_thread_blocked, id=17612, stack(0x0000000016810000,0x0000000016910000)]
+  0x0000000013e9c800 JavaThread "Reference Handler" daemon [_thread_blocked, id=19140, stack(0x0000000016710000,0x0000000016810000)]
+  0x00000000033f5800 JavaThread "main" [_thread_in_native, id=2824, stack(0x00000000032f0000,0x00000000033f0000)]
+
+Other Threads:
+  0x0000000015582800 VMThread [stack: 0x0000000016610000,0x0000000016710000] [id=20244]
+  0x000000001568c800 WatcherThread [stack: 0x0000000017070000,0x0000000017170000] [id=21024]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000fc000000, size: 64 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 18944K, used 2294K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 14% used [0x00000000feb00000,0x00000000fed3da38,0x00000000ffb00000)
+  from space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 0K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 0% used [0x00000000fc000000,0x00000000fc000000,0x00000000feb00000)
+ Metaspace       used 3417K, capacity 4652K, committed 4864K, reserved 1056768K
+  class space    used 355K, capacity 424K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000000001560000,0x0000000001590000] byte_map_base: 0x0000000000d80000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000584bf030
+ Begin Bits: [0x00000000132b0000, 0x00000000133b0000)
+ End Bits:   [0x00000000133b0000, 0x00000000134b0000)
+
+Polling page: 0x0000000000f80000
+
+CodeCache: size=245760Kb used=1212Kb max_used=1224Kb free=244547Kb
+ bounds [0x00000000034f0000, 0x0000000003760000, 0x00000000124f0000]
+ total_blobs=331 nmethods=76 adapters=169
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.234 Thread 0x0000000015623000   51       3       java.util.Hashtable::addEntry (87 bytes)
+Event: 0.234 Thread 0x0000000015623000 nmethod 51 0x000000000360f890 code [0x000000000360fa40, 0x0000000003610098]
+Event: 0.234 Thread 0x0000000015623000   52       3       java.lang.Character::toUpperCaseEx (30 bytes)
+Event: 0.234 Thread 0x0000000015623000 nmethod 52 0x00000000036103d0 code [0x0000000003610540, 0x0000000003610798]
+Event: 0.234 Thread 0x0000000015623000   53       3       java.lang.CharacterDataLatin1::toUpperCaseEx (71 bytes)
+Event: 0.235 Thread 0x0000000015623000 nmethod 53 0x0000000003610850 code [0x00000000036109c0, 0x0000000003610c90]
+Event: 0.237 Thread 0x0000000015623000   54       3       java.lang.String::indexOf (166 bytes)
+Event: 0.238 Thread 0x0000000015623000 nmethod 54 0x0000000003610e10 code [0x0000000003610fc0, 0x0000000003611610]
+Event: 0.238 Thread 0x0000000015623000   55       3       java.lang.String::toLowerCase (439 bytes)
+Event: 0.238 Thread 0x0000000013eae000   59       4       java.lang.CharacterData::of (120 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.069 Thread 0x00000000033f5800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000feb07cc8) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\jni.cpp, line 4013
+Event: 0.069 Thread 0x00000000033f5800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000feb07fb0) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\jni.cpp, line 4013]
+
+Events (10 events):
+Event: 0.233 loading class java/util/LinkedHashMap$LinkedEntrySet
+Event: 0.233 loading class java/util/LinkedHashMap$LinkedEntrySet done
+Event: 0.233 loading class java/util/LinkedHashMap$LinkedEntryIterator
+Event: 0.233 loading class java/util/LinkedHashMap$LinkedHashIterator
+Event: 0.234 loading class java/util/LinkedHashMap$LinkedHashIterator done
+Event: 0.234 loading class java/util/LinkedHashMap$LinkedEntryIterator done
+Event: 0.234 loading class java/security/Provider$Service
+Event: 0.234 loading class java/security/Provider$Service done
+Event: 0.235 loading class java/security/Provider$UString
+Event: 0.235 loading class java/security/Provider$UString done
+
+
+Dynamic libraries:
+0x00007ff6e90c0000 - 0x00007ff6e90f1000 	D:\softwrae\Android_studio\androidstudio\jre\bin\java.exe
+0x00007ffe76260000 - 0x00007ffe76450000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe75170000 - 0x00007ffe75222000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe73610000 - 0x00007ffe738b5000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe75dc0000 - 0x00007ffe75e63000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe75ef0000 - 0x00007ffe75f8e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe75f90000 - 0x00007ffe76027000 	C:\Windows\System32\sechost.dll
+0x00007ffe74cb0000 - 0x00007ffe74dcf000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe754f0000 - 0x00007ffe75684000 	C:\Windows\System32\USER32.dll
+0x00007ffe73280000 - 0x00007ffe732a1000 	C:\Windows\System32\win32u.dll
+0x00007ffe75440000 - 0x00007ffe75466000 	C:\Windows\System32\GDI32.dll
+0x00007ffe732b0000 - 0x00007ffe73448000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe73570000 - 0x00007ffe7360e000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe738c0000 - 0x00007ffe739ba000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe5fb80000 - 0x00007ffe5fe04000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1440_none_9e7dbfb9e45e8e67\COMCTL32.dll
+0x00007ffe74dd0000 - 0x00007ffe75106000 	C:\Windows\System32\combase.dll
+0x00007ffe73480000 - 0x00007ffe73501000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe74ad0000 - 0x00007ffe74afe000 	C:\Windows\System32\IMM32.DLL
+0x0000000057af0000 - 0x0000000057bc2000 	D:\softwrae\Android_studio\androidstudio\jre\jre\bin\msvcr100.dll
+0x0000000057cf0000 - 0x000000005853b000 	D:\softwrae\Android_studio\androidstudio\jre\jre\bin\server\jvm.dll
+0x00007ffe74a00000 - 0x00007ffe74a08000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffe5b400000 - 0x00007ffe5b409000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffe75360000 - 0x00007ffe753cf000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe710e0000 - 0x00007ffe71104000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe65a20000 - 0x00007ffe65a2a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe70ed0000 - 0x00007ffe70efd000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffe739e0000 - 0x00007ffe73a2a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffe6fa50000 - 0x00007ffe6fa5f000 	D:\softwrae\Android_studio\androidstudio\jre\jre\bin\verify.dll
+0x00007ffe5f670000 - 0x00007ffe5f699000 	D:\softwrae\Android_studio\androidstudio\jre\jre\bin\java.dll
+0x00007ffe6fa30000 - 0x00007ffe6fa46000 	D:\softwrae\Android_studio\androidstudio\jre\jre\bin\zip.dll
+0x00007ffe74310000 - 0x00007ffe749f8000 	C:\Windows\System32\SHELL32.dll
+0x00007ffe74a20000 - 0x00007ffe74ac7000 	C:\Windows\System32\shcore.dll
+0x00007ffe73b90000 - 0x00007ffe7430b000 	C:\Windows\System32\windows.storage.dll
+0x00007ffe73160000 - 0x00007ffe7317e000 	C:\Windows\System32\profapi.dll
+0x00007ffe73180000 - 0x00007ffe731ca000 	C:\Windows\System32\powrprof.dll
+0x00007ffe73110000 - 0x00007ffe73120000 	C:\Windows\System32\UMPDC.dll
+0x00007ffe75110000 - 0x00007ffe75162000 	C:\Windows\System32\shlwapi.dll
+0x00007ffe73140000 - 0x00007ffe73151000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffe739c0000 - 0x00007ffe739d7000 	C:\Windows\System32\cryptsp.dll
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Xmx64M -Dfile.encoding=UTF-8 -Duser.country=CN -Duser.language=zh -Duser.variant 
+java_command: com.google.devtools.build.android.desugar.Desugar --input C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\2.jar --output C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\desugar\debug\3.jar --input C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\34.jar --output C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\desugar\debug\35.jar --input C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\1.jar --output C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\desugar\debug\2.jar --input C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\33.jar --output C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\desugar\debug\34.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\classes\debug --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\0.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\1.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\2.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\3.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\4.jar --classpath_entry C:\data\software\Android_studio\Reposities\kaoyanAPP\app\build\intermediates\transforms\stackFramesFixer\debug\5.jar --classpath_entry C:\data\software\Android_
+java_class_path (initial): C:\Users\15751\AppData\Local\Temp\desugar_deploy.jar4490792368474580725
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_271
+CLASSPATH=.;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\Java\jdk1.8.0_271\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_271\lib\tools.jar
+PATH=C:\data\software\vmware\vmware\bin\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\Java\jdk1.8.0_271\jre\bin;C:\data\software\git\git\cmd;C:\data\software\tools\maven\apache-maven-3.6.3\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Java\jdk1.8.0_271;C:\data\software\tools\gradle\gradle\gradle-6.7\bin\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\System32;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;D:\softwrae\Tools\Xshell_7.0.0054\评估版\data\;C:\Users\15751\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\15751\AppData\Local\Programs\Python\Python37\;C:\Users\15751\AppData\Local\Microsoft\WindowsApps;;C:\data\software\idea\idea\IntelliJ IDEA 2020.2.3\bin;;C:\data\software\pycharm\pycharm\bin;;D:\softwrae\jetBrains\dataGrip\dataGrip\bin;;C:\Users\15751\.dotnet\tools
+USERNAME=15751
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1350)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16642228k(4164616k free), swap 25030836k(371672k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b01) for windows-amd64 JRE (1.8.0_242-release-1644-b01), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Tue Apr 06 10:19:13 2021
+timezone: 中国标准时间
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
