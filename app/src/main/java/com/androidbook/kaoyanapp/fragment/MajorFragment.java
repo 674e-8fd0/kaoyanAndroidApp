@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,12 +19,15 @@ import com.androidbook.kaoyanapp.api.TtitCallback;
 import com.androidbook.kaoyanapp.entity.ArtitleBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MajorFragment  extends Fragment{
     private RecyclerView recyclerView;
+    private RefreshLayout refreshLayout;
     private ItemAdapter itemAdapter;
     private String tittle;
 
@@ -37,6 +41,7 @@ public class MajorFragment  extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_items,container,false);
         recyclerView=v.findViewById(R.id.itemRecycle);
+        refreshLayout = v.findViewById(R.id.refreshLayout);
         return v;
     }
 
@@ -47,7 +52,14 @@ public class MajorFragment  extends Fragment{
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         getArticleList();
-
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                Toast.makeText(getContext(), "专业课文章刷新", Toast.LENGTH_SHORT).show();
+                getArticleList();
+                refreshLayout.finishRefresh(true);
+            }
+        });
 
     }
     private void getArticleList(){

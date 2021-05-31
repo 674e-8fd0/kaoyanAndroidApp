@@ -2,6 +2,7 @@ package com.androidbook.kaoyanapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 import com.androidbook.kaoyanapp.R;
@@ -21,13 +22,21 @@ public class DispayArt  extends BaseActivity {
     title=findViewById(R.id.title);
     times=findViewById(R.id.times);
     artitle=findViewById(R.id.artContent);
-
+        artitle.setMovementMethod(ScrollingMovementMethod.getInstance());
         Intent intent = getIntent();
         Bundle bundle=intent.getExtras();
         //youJavaBean= (YouJavaBean)bundle.get("youJavaBean");
-        //ArtitleBean artitleBean= (ArtitleBean) intent.getSerializableExtra("art");
-        ArtitleBean artitleBean=(ArtitleBean) bundle.get("art");
-        if (EmptyUtil.isEmpty(artitleBean)){
+        ArtitleBean artitleBean= (ArtitleBean) intent.getSerializableExtra("art");
+//        ArtitleBean artitleBean=new ArtitleBean();
+//        artitleBean.setText(intent.getStringExtra("text"));
+//        artitleBean.setTime(intent.getStringExtra("time"));
+//        artitleBean.setUser(intent.getStringExtra("user"));
+//        artitleBean.setTittle(intent.getStringExtra("tittle"));
+        System.out.println("34"+intent.getStringExtra("tittle"));
+        System.out.println("35"+artitleBean.getTittle());
+
+
+        if (!EmptyUtil.isEmpty(artitleBean)){
             System.out.println("DispayArt 28");
             author.setText(artitleBean.getUser());
             title.setText(artitleBean.getTittle());

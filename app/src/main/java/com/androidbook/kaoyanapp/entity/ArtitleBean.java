@@ -22,6 +22,9 @@ public class ArtitleBean implements Serializable {
 
     private String category;
 
+
+
+
     public ArtitleBean(String user, String tittle, String text, String time, String weight, String issue, String category) {
         this.user = user;
         this.tittle = tittle;
@@ -30,6 +33,9 @@ public class ArtitleBean implements Serializable {
         this.weight = weight;
         this.issue = issue;
         this.category = category;
+    }
+
+    public ArtitleBean() {
     }
 
     public String getUser() {

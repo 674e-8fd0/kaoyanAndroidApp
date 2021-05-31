@@ -77,9 +77,18 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
                 Intent in = new Intent(mContext, DispayArt.class);
 
                 Bundle bundle = new Bundle();
+
                 bundle.putSerializable("art", artitleBean1);
                 in.putExtras(bundle);
                 in.putExtra("1","3");
+
+                in.putExtra("user",artitleBean1.getUser());
+                in.putExtra("tittle",artitleBean1.getTittle());
+                in.putExtra("text",artitleBean1.getText());
+                in.putExtra("time",artitleBean1.getTime());
+
+
+
 
                 mContext.startActivity(in);
 
