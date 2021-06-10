@@ -50,12 +50,14 @@ public class LoginActivity extends BaseActivity {
             showToast("请输入账号");
             return;
         }
-        if (StringUtils.isEmpty(pwd)) {
+        else if (StringUtils.isEmpty(pwd)) {
             showToast("请输入密码");
             return;
+        }else{
+            navigateToWithFlag(HomeActivity.class,
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         }
-        navigateToWithFlag(HomeActivity.class,
-                Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
     }
 
 //    private void login(String account, String pwd) {

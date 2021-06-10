@@ -43,6 +43,12 @@ public class Api {
                 .build();
         requestUrl = ApiConfig.BASE_URl + url;
         mParams = params;
+        if (mParams!=null) {
+            JSONObject jsonObject = new JSONObject(mParams);
+            String jsonStr = jsonObject.toString();
+            System.out.println("Api49");
+            System.out.println(jsonStr);
+        }
         return api;
     }
 
@@ -51,17 +57,18 @@ public class Api {
         String token = sp.getString("token", "");
         JSONObject jsonObject = new JSONObject(mParams);
         String jsonStr = jsonObject.toString();
+        System.out.println(jsonStr);
         RequestBody requestBodyJson =
-                RequestBody.create(MediaType.parse("application/json;charset=utf-8")
-                        , jsonStr);
+        RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonStr);
         //第三步创建Rquest
         Request request = new Request.Builder()
                 .url(requestUrl)
                 .addHeader("contentType", "application/json;charset=UTF-8")
-                .addHeader("token", token)
                 .post(requestBodyJson)
                 .build();
         //第四步创建call回调对象
+        System.out.println("Api63");
+        System.out.println(requestUrl);
         final Call call = client.newCall(request);
         //第五步发起请求
         call.enqueue(new Callback() {

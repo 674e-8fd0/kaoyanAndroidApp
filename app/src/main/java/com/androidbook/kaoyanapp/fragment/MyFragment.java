@@ -7,7 +7,8 @@ import android.widget.ImageView;
 
 import com.androidbook.kaoyanapp.R;
 import com.androidbook.kaoyanapp.activity.LoginActivity;
-import com.androidbook.kaoyanapp.activity.MyCollectActivity;
+import com.androidbook.kaoyanapp.activity.ManagerCenterActivity;
+
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -50,7 +51,7 @@ public class MyFragment extends BaseFragment {
                 System.out.println("123");
                 break;
             case R.id.rl_creat:
-
+                navigateTo(ManagerCenterActivity.class);
                 break;
             case R.id.setting:
 

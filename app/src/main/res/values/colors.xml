@@ -21,5 +21,6 @@
     <color name="gray2">#969696</color>
     <color name="btn_navigator_selected">	#FFD700</color>
     <color name="btn_navigator_nselected">	#DCDCDC</color>
+    <color name="btn">#9C4AFF</color>
 
 </resources>

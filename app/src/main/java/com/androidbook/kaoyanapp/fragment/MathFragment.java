@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidbook.kaoyanapp.R;
 import com.androidbook.kaoyanapp.adapter.ItemAdapter;
-import com.androidbook.kaoyanapp.adapter.VideoAdapter;
+
 import com.androidbook.kaoyanapp.api.Api;
 import com.androidbook.kaoyanapp.api.TtitCallback;
 import com.androidbook.kaoyanapp.entity.ArtitleBean;
-import com.androidbook.kaoyanapp.entity.VideoEntity;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -27,7 +27,7 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.OnClick;
+
 
 public class MathFragment extends Fragment {
     private RecyclerView recyclerView;

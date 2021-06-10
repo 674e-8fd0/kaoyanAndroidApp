@@ -10,7 +10,7 @@ import com.androidbook.kaoyanapp.fragment.AnalyseFragment;
 import com.androidbook.kaoyanapp.fragment.HomeFragment;
 import com.androidbook.kaoyanapp.fragment.MsgFragment;
 import com.androidbook.kaoyanapp.fragment.MyFragment;
-import com.androidbook.kaoyanapp.fragment.VideoFragment;
+
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;

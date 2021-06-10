@@ -38,9 +38,9 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_artitles_layout, parent, false);
-        ItmeHolder itemAdapter = new ItmeHolder(view);
+        ItmeHolder itmeHolder = new ItmeHolder(view);
         System.out.println("ItemAdapter 38");
-        return itemAdapter;
+        return itmeHolder;
     }
 
     @Override

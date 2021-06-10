@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.androidbook.kaoyanapp.activity.BaseActivity;
+import com.androidbook.kaoyanapp.activity.EditTextActivity;
 import com.androidbook.kaoyanapp.activity.HomeActivity;
 import com.androidbook.kaoyanapp.activity.ListViewMultiChartActivity;
 import com.androidbook.kaoyanapp.activity.LoginActivity;
+import com.androidbook.kaoyanapp.activity.ManagerCenterActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -31,12 +33,15 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        navigateTo(HomeActivity.class);
+        //navigateTo(HomeActivity.class);
+//        navigateTo(ManagerCenterActivity.class);
+//        navigateTo(EditTextActivity.class);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //navigateTo(ListViewMultiChartActivity.class);
-                navigateTo(HomeActivity.class);
+             //  navigateTo(HomeActivity.class);
+                navigateTo(LoginActivity.class);
             }
         });
 
